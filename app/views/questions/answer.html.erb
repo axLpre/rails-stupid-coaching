@@ -1,0 +1,27 @@
+<h1>Question#answer</h1>
+<p>Find me in app/views/question/answer.html.erb</p>
+
+<h3>Response:</h3>
+
+<p>
+  <% if @message.nil? %>
+  <%= "You have enter nothing" %>
+  <% else  %>
+  <%= @message %>
+  <% end %>
+</p>
+
+<h3>Coach answer:</h3>
+<p>
+  <% if @message.nil? %>
+  <%= "I don't care, get dressed and go to work!"  %>
+  <% elsif @message.include? '?' %>
+  <%= "Silly question, get dressed and go to work!" %>
+  <% elsif @message == "I am going to work" %>
+  <%= "Great!" %>
+  <% else %>
+  <%=  "I don't care, get dressed and go to work!" %>
+  <% end %>
+  <br>
+  <%= link_to "Ask a new question", ask_path %>
+</p>
